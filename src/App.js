@@ -3,6 +3,8 @@ import { animated, useSpring } from "react-spring";
 import logo from "./logo.svg";
 import "./App.css";
 
+const colorPalate = ["#F9BEA6", "#234E52", "#7C835C", "#BDE4D9", "#94433A"];
+
 const App = () => (
   <div className="App">
     <header className="App-header">
@@ -23,6 +25,23 @@ const App = () => (
         >
           Learn React
         </a>
+        <div className="color-palate">
+          {colorPalate.map((color) => {
+            console.log("color :", color);
+            return (
+              <div
+                className="colors"
+                key={color}
+                style={{
+                  backgroundColor: color,
+                  width: "5vh",
+                  height: "5vh",
+                  marginTop: "2vh",
+                }}
+              />
+            );
+          })}
+        </div>
       </animated.div>
     </header>
   </div>
